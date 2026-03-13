@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\views\\pais\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\views\\pais\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\views\\equipo\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\views\\equipo\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\views\\pais\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\views\\pais\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\views\\pais\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\views\\pais\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\controllers\\equipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\controllers\\equipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|c:\\users\\rubenlacallezorrilla\\source\\repos\\competiciones\\competiciones\\controllers\\paiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{405470C9-660B-43A1-A5CF-D4A3C20C1089}|Competiciones\\Competiciones.csproj|solutionrelative:competiciones\\controllers\\paiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 267,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Equipo\\Create.cshtml",
+              "RelativeDocumentMoniker": "Competiciones\\Views\\Equipo\\Create.cshtml",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Equipo\\Create.cshtml",
+              "RelativeToolTip": "Competiciones\\Views\\Equipo\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:01:36.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Create.cshtml",
+              "RelativeDocumentMoniker": "Competiciones\\Views\\Pais\\Create.cshtml",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Create.cshtml",
+              "RelativeToolTip": "Competiciones\\Views\\Pais\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:01:25.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Details.cshtml",
+              "RelativeDocumentMoniker": "Competiciones\\Views\\Pais\\Details.cshtml",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Details.cshtml",
+              "RelativeToolTip": "Competiciones\\Views\\Pais\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:01:23.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Index.cshtml",
+              "RelativeDocumentMoniker": "Competiciones\\Views\\Pais\\Index.cshtml",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Views\\Pais\\Index.cshtml",
+              "RelativeToolTip": "Competiciones\\Views\\Pais\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:01:17.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EquipoController.cs",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Controllers\\EquipoController.cs",
+              "RelativeDocumentMoniker": "Competiciones\\Controllers\\EquipoController.cs",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Controllers\\EquipoController.cs",
+              "RelativeToolTip": "Competiciones\\Controllers\\EquipoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:00:56.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PaisController.cs",
+              "DocumentMoniker": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Controllers\\PaisController.cs",
+              "RelativeDocumentMoniker": "Competiciones\\Controllers\\PaisController.cs",
+              "ToolTip": "C:\\Users\\RubenLacalleZorrilla\\source\\repos\\Competiciones\\Competiciones\\Controllers\\PaisController.cs",
+              "RelativeToolTip": "Competiciones\\Controllers\\PaisController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:00:54.122Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

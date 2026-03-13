@@ -1,0 +1,36 @@
+﻿@using Competiciones.Models.Entities
+@using Competiciones.Models.ViewModels
+
+@model DetallesCompeticionView
+
+
+<div class="row">
+	<h1 class="col text-center">@Model.Titulo</h1>
+</div>
+<div class="d-flex justify-content-center">
+	<table class="table mt-3 w-auto table-bordered" id="equiposParticipantesTable">
+		<thead>
+			<tr>
+				<th colspan="2">Equipos</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (Equipo equipo in Model.Competicion.Equipos)
+			{
+				var rutaEscudo = "~/images/" + (equipo.RutaEscudo ?? "Blanco.jpg");
+				<tr>
+					<td><img src="@rutaEscudo" alt="@equipo.Name" style="width:32px" asp-append-version="true" /></td>
+					<td>@equipo.Name</td>
+				</tr>
+			}
+			<tr>
+				<td colspan="2" class="text-center">
+					<a class="btn btn-primary" asp-controller="Equipo" asp-action="Index"> Ver Equipos</a>
+					<button class="btn btn-primary" onclick="history.back()"> Volver </button>
+					<a class="btn btn-danger" asp-controller="Competicion" asp-action="Delete" asp-route-id="@Model.Competicion.Id">Eliminar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

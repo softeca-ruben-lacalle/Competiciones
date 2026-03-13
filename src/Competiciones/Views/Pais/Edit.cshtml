@@ -1,0 +1,45 @@
+﻿@using Competiciones.Models.ViewModels
+@model EditarPaisViewModel
+@{
+    ViewData["Title"] = "Nuevo Pais";
+
+    var rutaBandera = "~/images/" + (Model.rutaBanderaExistente ?? "FotoBlanco.png");
+}
+
+<form asp-controller="Pais" asp-action="Create" method="post" class="m-2" enctype="multipart/form-data">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input hidden asp-for="Id" />
+    <input hidden asp-for="rutaBanderaExistente" />
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Bandera</span>
+        <input asp-for="Bandera" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+    </div>
+    <div class="input-group row">
+        <img class="img-thumbnail col-sm-4 offset-4" src="@rutaBandera" asp-append-version="true" />
+    </div>
+    <div class="input-group mb-3">
+        <div class="col-sm-10 ">
+            <button type="submit" class="btn btn-primary">Modificar pais</button>
+            <button class="btn btn-primary" onclick="history.back()">Volver</button>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script>
+            $(document).ready(function(){
+                $('.custom-file-input').on("change", function(){
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                })
+            })
+        </script>
+    }
+
+</form>
+

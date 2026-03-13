@@ -1,0 +1,57 @@
+﻿@using Competiciones.Models.Entities
+@model Partido
+@{
+	string escudoEquipoLocal = "~/images/" + (Model.EquipoLocal.RutaEscudo ?? "Blanco.jpg");
+	string escudoEquipoVisitante = "~/images/" + (Model.EquipoVisitante.RutaEscudo ?? "Blanco.jpg");
+
+	string resultado = Model.Resultado == null ? "Se desconoce resultado" : Model.Resultado.ToString();
+}
+<div class="container mt-4">
+	<div class="col-12">
+		<div class="card shadow-sm border-0">
+			<div class="card-body">
+
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="text-center flex-fill">
+						<h5 class="fw-bold">@Model.EquipoLocal.Name</h5>
+						<img src="@escudoEquipoLocal" alt="@Model.EquipoLocal.Name" asp-append-version="true" width="64px" />
+					</div>
+
+					<div class="px-3 text-center">
+						<span class="badge bg-primary fs-6">@Model.Horario.ToString("dd/MM HH:mm")</span>
+						<div class="small text-muted">@Model.Competicion.Name</div>
+						@{
+							var ahora = DateTime.Now;
+							if (Model.Horario >= ahora)
+							{
+								<span class="badge bg-secondary">Partido no jugado</span>
+							}
+							else if (Model.Resultado == null)
+							{
+								<span class="badge bg-secondary">Se desconoce resultado</span>
+							}
+							else
+							{
+								<span class="badge bg-success">@Model.Resultado</span>
+							}
+						}
+					</div>
+
+					<div class="text-center flex-fill">
+						<h5 class="fw-bold">@Model.EquipoVisitante.Name</h5>
+						<img src="@escudoEquipoVisitante" alt="@Model.EquipoVisitante.Name" asp-append-version="true" width="64px" />
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-12 align-items-center">
+		<div class="d-flex justify-content-center align-items-center m-3">
+
+			<button class="btn btn-primary" onclick="history.back()">Volver</button>
+			<a class="btn btn-success mx-3" asp-controller="Partido" asp-action="Edit" asp-route-id="@Model.Id">Editar partido</a>
+			<a class="btn btn-danger" asp-controller="Partido" asp-action="Delete" asp-route-id="@Model.Id">Eliminar</a>
+		</div>
+	</div>
+</div>

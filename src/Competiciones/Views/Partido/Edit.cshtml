@@ -1,0 +1,85 @@
+﻿@using Competiciones.Models.ViewModels
+@using System.Text.Json
+@model EditarPartidoViewModel
+
+<h2>Editar Partido</h2>
+
+<form asp-action="Edit" method="post">
+
+	<div class="mb-3">
+		<label class="form-label">Competición</label>
+		<select id="competicionSelect" asp-for="CompeticionId" class="form-select">
+			<option value="">-- Selecciona una competición --</option>
+			@foreach (var comp in Model.Competiciones)
+			{
+				<option value="@comp.Id">@comp.Name</option>
+			}
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="CompeticionId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Equipo Local</label>
+		<select id="equipoLocalSelect" asp-for="EquipoLocalId" name="EquipoLocalId" class="form-select">
+			<option value="">-- Selecciona equipo local --</option>
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="EquipoLocalId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Equipo Visitante</label>
+		<select id="equipoVisitanteSelect" asp-for="EquipoVisitanteId" name="EquipoVisitanteId" class="form-select">
+			<option value="">-- Selecciona equipo visitante --</option>
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="EquipoVisitanteId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Horario</label>
+		<input asp-for="Horario" type="datetime-local" class="form-control" />
+	</div>
+	<span class="text-danger" asp-validation-for="Horario"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Resultado</label>
+		<input asp-for="Resultado" type="text" class="form-control" />
+	</div>
+	<span class="text-danger" asp-validation-for="Resultado"></span>
+
+	<button type="submit" class="btn btn-primary">Editar Partido</button>
+</form>
+
+@section Scripts {
+	<script>
+		const competiciones = @Html.Raw(JsonSerializer.Serialize(Model.Competiciones));
+
+
+		const competicionSelect = document.getElementById("competicionSelect");
+		const equipoLocalSelect = document.getElementById("equipoLocalSelect");
+		const equipoVisitanteSelect = document.getElementById("equipoVisitanteSelect");
+
+		document.addEventListener("DOMContentLoaded", rellenarSelect);
+		competicionSelect.addEventListener("change", rellenarSelect);
+
+		function rellenarSelect(){
+			const compId = parseInt(competicionSelect.value);
+
+			const comp = competiciones.find(c => c.Id == compId);
+
+			equipoLocalSelect.innerHTML = "<option value=''>-- Selecciona equipo local --</option>";
+			equipoVisitanteSelect.innerHTML = "<option value=''>-- Selecciona equipo visitante --</option>";
+
+			if (!comp){
+				return;
+			}
+
+			comp.Equipos.forEach(eq => {
+				equipoLocalSelect.add(new Option(eq.Name, eq.Id));
+				equipoVisitanteSelect.add(new Option(eq.Name, eq.Id));
+			});
+
+			equipoLocalSelect.value = "@Model.EquipoLocalId";
+			equipoVisitanteSelect.value = "@Model.EquipoVisitanteId";
+		}
+	</script>
+}

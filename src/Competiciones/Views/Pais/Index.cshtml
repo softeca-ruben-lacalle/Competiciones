@@ -1,0 +1,33 @@
+﻿@using Competiciones.Models.Entities
+@model List<Pais>
+@{
+	ViewData["Title"] = "Paises";
+}
+<div class="row">
+	<h1 class="col"> Paises Registrados</h1>
+	<a class="col-1 btn-add btn btn-dark" asp-controller="Pais" asp-action="Create"><img src="~/img/agregarIcon.png" alt="Alternate Text" /></a>
+</div>
+<div class="container mt-4">
+	<div class="row">
+		@foreach (Pais pais in Model)
+		{
+			var rutaBandera = "~/images/" + (pais.rutaBandera ?? "Blanco.jpg");
+
+			<div class="col-12 col-sm-6 col-md-4 mb-4">
+				<div class="card h-100 p-3">
+					<img class="card-img-top" src="@rutaBandera" alt="@pais.Name" asp-append-version="true" />
+					<div class="card-body">
+						<h5 class="card-title text-center">@pais.Name</h5>
+					</div>
+					<div class="card-footer d-flex justify-content-evenly">
+						<a class="btn btn-primary" asp-controller="Pais" asp-action="Details" asp-route-id="@pais.Id">Ver</a>
+						<a class="btn btn-success" asp-controller="Pais" asp-action="Edit" asp-route-id="@pais.Id">Modificar</a>
+						<a class="btn btn-danger" asp-controller="Pais" asp-action="Delete" asp-route-id="@pais.Id">Eliminar</a>
+
+
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>

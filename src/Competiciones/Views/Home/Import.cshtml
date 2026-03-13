@@ -1,0 +1,29 @@
+﻿@using Competiciones.Models.ViewModels
+@model ImportarDatosViewModel
+
+<form asp-controller="Home" asp-action="Import" method="post" enctype="multipart/form-data">
+
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<div class="mb-3">
+		<label for="formFile" class="form-label">Archivo de Datos (.xlsx)</label>
+		<input class="form-control" type="file" asp-for="Datos" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+	</div>
+	<div class="input-group mb-3">
+		<div class="col-sm-10">
+			<button type="submit" class="btn btn-success">Importar datos</button>
+		</div>
+	</div>
+
+
+	@section Scripts{
+		<script>
+			$(document).ready(function(){
+				$('.custom-file-input').on("change", function(){
+					var fileName = $(this).val().split("\\").pop();
+					$(this).next('.custom-file-label').html(fileName);
+				})
+			})
+		</script>
+	}
+
+</form>

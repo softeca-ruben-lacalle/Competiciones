@@ -1,0 +1,80 @@
+﻿@using Competiciones.Models.Entities
+@model List<Competicion>
+@{
+	ViewData["Title"] = "Home Page";
+	var listaCompeticiones = ViewBag.ListaCompeticiones;
+	var listaJugadores = ViewBag.ListaJugadores;
+	var listaEquipos = ViewBag.ListaEquipos;
+}
+
+<div class="text-center">
+
+	<section id="competiciones" class="py-5">
+		<div class="continer">
+			<h2 class="mb-4"> Competiciones </h2>
+			<div class="row g-4">
+				@foreach (Competicion competicion in listaCompeticiones)
+				{
+					string rutaBanderaPais = "~/images/" + (competicion.Pais.rutaBandera ?? "Blanco.jpg");
+					<div class="col-md-4">
+						<div class="card shadow-sm">
+							<div class="card-body">
+								<h5 class="card-title">@competicion.Name</h5>
+								<p class="card-text"><img src="@rutaBanderaPais" class="me-2" asp-append-version="true" width="32px" /></p>
+								<p class="text-muted"> Equipos participantes: @competicion.Equipos.Count.ToString()</p>
+								<a class="btn btn-primary" asp-controller="Competicion" asp-action="Details" asp-route-id="@competicion.Id"> Ver competición</a>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="equipos" class="py-5">
+		<div class="container">
+			<h2 class="mb-4"> Equipos destacados </h2>
+			<div class="row g-4">
+				@foreach (Equipo equipo in listaEquipos)
+				{
+					string rutaEscudo = "~/images/" + (equipo.RutaEscudo ?? "Blanco.jpg");
+					<div class="col-md-3">
+						<div class="card text-center shadow-sm">
+							<img src="@rutaEscudo" class="escudo mx-auto mt-3" asp-append-version="true" width="32px">
+							<div class="card-body">
+								<h6 class="card-title">@equipo.Name</h6>
+								<p class="text-muted">@equipo.Pais.Name</p>
+								<a asp-controller="Equipo" asp-action="Details" asp-route-id="@equipo.Id" class="btn btn-sm btn-primary">Ver equipo</a>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="jugadores" class="py-5">
+		<div class="container">
+			<h2 class="mb-4">Jugadores destacados</h2>
+			<div class="row g-4">
+				@foreach (Jugador jugador in listaJugadores)
+				{
+
+					<div class="col-md-4">
+						<div class="card shadow-sm">
+							<div class="card-body">
+								<h5>@jugador.Name @jugador.LastNames</h5>
+								<p class="text-muted">@jugador.Equipo.Name</p>
+								<p>Altura: @jugador.Altura cm · Peso: @jugador.Peso kg · Edad: @jugador.Edad</p>
+								<a asp-controller="Jugador" asp-action="Details" asp-route-id="@jugador.Id" class="btn btn-outline-secondary btn-sm">Ver jugador</a>
+							</div>
+						</div>
+					</div>
+				}
+
+			</div>
+		</div>
+	</section>
+
+
+</div>

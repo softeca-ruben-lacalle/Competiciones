@@ -1,0 +1,33 @@
+﻿@using Competiciones.Models.Entities
+@model List<Equipo>
+@{
+	ViewData["Title"] = "Equipos";
+}
+<div class="row">
+	<h1 class="col"> Equipos Registrados</h1>
+	<a class="col-1 btn-add btn btn-dark" asp-controller="Equipo" asp-action="Create"><img src="~/img/agregarIcon.png" alt="Alternate Text" /></a>
+</div>
+<div class="container mt-4">
+	<div class="row row-cols-1 row-cols-4 g-4">
+		@foreach (Equipo equipo in Model)
+		{
+			var rutaEscudo = "~/images/" + (equipo.RutaEscudo ?? "Blanco.jpg");
+
+			<div class="col">
+				<div class="card h-100">
+					<div class="col-4">
+						<img class="card-img mw-50 m-3" src="@rutaEscudo" alt="Escudo @equipo.Name" asp-append-version=true />
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">@equipo.Name</h5>
+						<div class="d-flex justify-content-evenly">
+							<a class="btn btn-primary" asp-controller="Equipo" asp-action="Details" asp-route-id="@equipo.Id">Ver</a>
+							<a class="btn btn-primary" asp-controller="Equipo" asp-action="Edit" asp-route-id="@equipo.Id">Editar</a>
+							<a class="btn btn-danger" asp-controller="Equipo" asp-action="Delete" asp-route-id="@equipo.Id">Eliminar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>

@@ -1,0 +1,64 @@
+﻿@using Competiciones.Models.Entities
+@model List<Jugador>
+@{
+	ViewData["Title"] = "Equipos";
+}
+<div class="row">
+	<h1 class="col"> Jugadores Registrados</h1>
+	<a class="col-1 btn-add btn btn-dark" asp-controller="Jugador" asp-action="Create"><img src="~/img/agregarIcon.png" alt="Alternate Text" /></a>
+</div>
+@if (Model.Count != 0)
+{
+	<div class="container d-flex justify-content-center ">
+		<table class="table w-auto mt-4 table-bordered border-dark rounded overflow-hidden" id="tablaJugadores">
+			<thead>
+				<tr>
+					<th onclick="ordenarTabla(0)">Nombre</th>
+					<th onclick="ordenarTabla(1)">Equipo</th>
+					<th onclick="ordenarTabla(2)">Nacionalidad</th>
+					<th></th>
+				</tr>
+			</thead>
+			@foreach (Jugador jugador in Model)
+			{
+				var rutaBandera = "~/images/" + (jugador.Pais.rutaBandera ?? "Blanco.jpg");
+				<tr>
+					<td>
+						@jugador.Name @jugador.LastNames
+					</td>
+					<td>@jugador.Equipo.Name</td>
+					<td><img src="@rutaBandera" alt="@jugador.Pais.Name" asp-append-version="true" style="width:32px" /></td>
+					<td>
+						<a class="btn btn-primary" asp-controller="Jugador" asp-action="Details" asp-route-id="@jugador.Id">Ver</a>
+						<a class="btn btn-primary" asp-controller="Jugador" asp-action="Edit" asp-route-id="@jugador.Id">Editar</a>
+						<a class="btn btn-danger" asp-controller="Jugador" asp-action="Delete" asp-route-id="@jugador.Id">Eliminar</a>
+					</td>
+
+				</tr>
+
+			}
+		</table>
+	</div>
+
+}
+else
+{
+	<div class="text-center fs-4"> No se han encontrado jugadores. </div>
+}
+<script>
+	function ordenarTabla(n){
+		var table =document.getElementById("tablaJugadores");
+		var rows = Array.from(table.rows).slice(1);
+
+		rows.sort((a,b)=>{
+			let valA = a.cells[n].innerText.toLowerCase();
+			let valB = b.cells[n].innerText.toLowerCase();
+
+			if(!isNaN(valA) && !isNaN(valB)){
+				return parseFloat(valA) - parseFloat(valB);
+			}
+				return valA.localeCompare(valB);
+		});
+		rows.forEach(row=>table.tBodies[0].appendChild(row));
+	}
+</script>

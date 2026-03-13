@@ -1,0 +1,25 @@
+﻿@using Competiciones.Models.ViewModels
+@model CrearPaisViewModel
+@{
+    ViewData["Title"] = "Crear Pais";
+}
+
+<form asp-controller="Pais" asp-action="Create" method="post" class="m-2" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"> </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Bandera</span>
+        <input asp-for="Bandera" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+    </div>
+    <div class="input-group mb-3">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Añadir pais</button>
+            <button class="btn btn-primary" onclick="history.back()">Volver</button>
+        </div>
+    </div>
+
+</form>
+

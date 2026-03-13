@@ -1,0 +1,74 @@
+﻿@using Competiciones.Models.ViewModels
+@using System.Text.Json
+@model CrearPartidoViewModel
+
+<h2>Crear Partido</h2>
+
+<form asp-action="Create" method="post">
+
+	<div class="mb-3">
+		<label class="form-label">Competición</label>
+		<select id="competicionSelect" asp-for="CompeticionId" class="form-select">
+			<option value="">-- Selecciona una competición --</option>
+			@foreach (var comp in Model.Competiciones)
+			{
+				<option value="@comp.Id">@comp.Name</option>
+			}
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="CompeticionId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Equipo Local</label>
+		<select id="equipoLocalSelect" asp-for="EquipoLocalId" name="EquipoLocalId" class="form-select">
+			<option value="">-- Selecciona equipo local --</option>
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="EquipoLocalId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Equipo Visitante</label>
+		<select id="equipoVisitanteSelect" asp-for="EquipoVisitanteId" name="EquipoVisitanteId" class="form-select">
+			<option value="">-- Selecciona equipo visitante --</option>
+		</select>
+	</div>
+	<span class="text-danger" asp-validation-for="EquipoVisitanteId"></span>
+
+	<div class="mb-3">
+		<label class="form-label">Horario</label>
+		<input asp-for="Horario" type="datetime-local" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+	</div>
+	<span class="text-danger" asp-validation-for="Horario"></span>
+
+	<button type="submit" class="btn btn-primary">Crear Partido</button>
+</form>
+
+@section Scripts {
+	<script>
+		const competiciones = @Html.Raw(JsonSerializer.Serialize(Model.Competiciones));
+
+
+		const competicionSelect = document.getElementById("competicionSelect");
+		const equipoLocalSelect = document.getElementById("equipoLocalSelect");
+		const equipoVisitanteSelect = document.getElementById("equipoVisitanteSelect");
+
+		competicionSelect.addEventListener("change", function () {
+			const compId = parseInt(this.value);
+				console.log(compId);
+
+			const comp = competiciones.find(c => c.Id == compId);
+		console.log(comp);
+
+			equipoLocalSelect.innerHTML = "<option value=''>-- Selecciona equipo local --</option>";
+			equipoVisitanteSelect.innerHTML = "<option value=''>-- Selecciona equipo visitante --</option>";
+
+			if (!comp){
+				return;}
+
+			comp.Equipos.forEach(eq => {
+				equipoLocalSelect.add(new Option(eq.Name, eq.Id));
+				equipoVisitanteSelect.add(new Option(eq.Name, eq.Id));
+			});
+		});
+	</script>
+}

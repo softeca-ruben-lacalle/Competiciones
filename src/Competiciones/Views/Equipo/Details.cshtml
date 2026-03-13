@@ -1,0 +1,33 @@
+﻿@using Competiciones.Models.Entities
+@using Competiciones.Models.ViewModels
+
+@model DetallesEquipoViewModel
+
+
+<div class="row">
+	<h1 class="col text-center">@Model.Titulo</h1>
+</div>
+<div class="d-flex flex-column align-items-center">
+	<table class="table mt-3 w-auto">
+		<thead>
+			<tr>
+				<th colspan="2">Jugadores</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (Jugador jugador in Model.Equipo.Jugadores)
+			{
+				<tr>
+					<td>@jugador.Name @jugador.LastNames</td>
+					<td><a class="btn btn-primary" asp-controller="Jugador" asp-action="Details" asp-route-id="@jugador.Id">Ficha técnica</a></td>
+					</tr>
+		}
+		</tbody>
+	</table>
+
+	<div>
+		<button class="btn btn-primary" onclick="history.back()">Volver</button>
+		<a class="btn btn-success" asp-controller="Equipo" asp-action="Edit" asp-route-id="@Model.Equipo.Id">Editar Equipo</a>
+		<a class="btn btn-danger" asp-controller="Equipo" asp-action="Delete" asp-route-id="@Model.Equipo.Id">Eliminar</a>
+	</div>
+</div>
